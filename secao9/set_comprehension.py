@@ -21,3 +21,4 @@ print(numeros)
 # Com String
 letras = {letra for letra in 'Geek University'}
 print(letras)
+print()
