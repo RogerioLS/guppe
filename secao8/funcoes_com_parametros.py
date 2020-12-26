@@ -77,6 +77,7 @@ print(nome_completo(sobre_nome = 'Rodrigo', nome = 'Sousa'))
 
 # Erro comum na utilização de return
 
+
 def soma_impares(numeros):
     total = 0
     for num in numeros:
@@ -85,7 +86,7 @@ def soma_impares(numeros):
     return total
 
 
-lista= [1,2,3,4,5,6,7,8,9]
+lista = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 print(soma_impares(lista))
 
 

@@ -13,7 +13,8 @@ valor = 1, 44
 print(valor)
 print(type(valor))
 
-#certo do ponto de vista float 
+#certo do ponto de vista float
+
 valor = 1.44
 print(valor)
 print(type(valor))

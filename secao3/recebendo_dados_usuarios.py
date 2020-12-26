@@ -36,7 +36,7 @@ idade = input()
 
 if int(idade) > 18:
     print('Tem a maior de idade')
-elif int(idade) ==18:
+elif int(idade) == 18:
     print('Idade 18 anos')
 else:
     print('Tem a menor de idade')

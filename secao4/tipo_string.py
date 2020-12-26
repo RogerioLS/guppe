@@ -23,11 +23,12 @@ print(nome[5:15]) Slice de string
 print(nome.split()[0])
 print(nome.split()[1])
 """
+
 #Estiver entre áspas simples -> """uma string""", """234""", """True"""
 
 nome = 'Geek University'
 print(nome[::-1]) # -> comece do primeiro elemento e inverta
-print(nome.replace('G','R'))
+print(nome.replace('G', 'R'))
 
 texto = 'socorram me subino onibus em marrocos'
 print(texto) #mais conhecido como palindrumo 

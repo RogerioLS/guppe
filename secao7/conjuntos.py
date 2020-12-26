@@ -238,7 +238,7 @@ print(so_java)
 # soma, valor maximo, valor minimo, tamanho
 # se os valores forem todos inteiros ou reais
 
-s = {1,2,4,5,6,7}
+s = {1, 2, 4, 5, 6, 7}
 print(sum(s))
 print(max(s))
 print(min(s))

@@ -21,4 +21,5 @@ else:
     print('Bem-vindo usúario')
 
 #ativo é verdadeiro?
+
 print(ativo is True)
