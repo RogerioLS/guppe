@@ -15,3 +15,4 @@ utilize no console digitando python
 
 
 print(dir('rogerio'))
+
