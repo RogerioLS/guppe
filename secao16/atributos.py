@@ -74,3 +74,45 @@ user = Acesso('user@gmail.com', '123')
 print(user.email)
 user.mostra_email()
 user.mostra_senha()
+
+# Atribuitos de instancias, significa, que ao criarmos instâncias/objetos de uma classe, todas as instâncias
+# terão estes atributos.
+
+user1 = Acesso('user1@gmail.com', '123456')
+user2 = Acesso('user2@gmail.com', '789012')
+
+user1.mostra_email()
+user2.mostra_email()
+
+# Atributos de classe, são atributos, claro, que são declarados diretamente na classe, ou seja,
+# fora do construtos. Geralmente já inicializamos um valor, e este valor é compartilhado entre
+# todas as instâncias da classe, Ou seja, ao inves de cada instancoa da classe ter seus proprios
+# valores como é o caso dos atributos de instancia, com os atributos de classe todas as instancias
+# terão o mesmo valor para este atributo.
+
+
+class Produto:
+    imposto = 1.05  # 0.05% de imposto
+    contador = 0
+
+    def __init__(self, nome, descricao, valor):
+        self.id = Produto.contador + 1
+        self.nome = nome
+        self.descricao = descricao
+        self.valor = (valor * Produto.imposto)
+        Produto.contador = self.id
+
+
+p1 = Produto('Play4', 'video game', 2300)
+p2 = Produto('Xbox S', 'video game', 4500)
+
+print(p1.valor)  # modo de Acesso incorreto
+print(p2.valor)
+
+print(p2.id)
+
+# Atributos Dinâmicos é um atributo de instancia que pode ser criado em tempo de execucao.
+
+p2.peso = '5kg'
+
+print(f'Produto: {p2.nome}, Descrição: {p2.descricao}, Valor: {p2.valor}, Peso: {p2.peso}')
