@@ -63,11 +63,30 @@ from passlib.hash import pbkdf2_sha256 as sha
 
 class Usuario:
 
+    contador = 0
+
+    @classmethod
+    def conta_usuario(cls):
+        """Métodos de classe"""
+        print(f'Temos {cls.contador} usuários no sistema')
+
+    @classmethod
+    def ver(cls):
+        print('Teste')
+
+    @staticmethod
+    def definicao():
+        return 'Ux344'
+
     def __init__(self, nome, sobrenome, email, senha):
+        """Métodos de instancia, que instancia o objeto criado"""
+        self.__id = Usuario.contador + 1
         self.__nome = nome
         self.__sobrenome = sobrenome
         self.__email = email
         self.__senha = sha.hash(senha, rounds=200000, salt_size=16)
+        Usuario.contador = self.__id
+        print(f'Usuario criado: {self.__gera_usuario()}')
 
     def nome_completo(self):
         """Retorna o nome completo"""
@@ -78,6 +97,9 @@ class Usuario:
         if sha.verify(senha, self.__senha):
             return True
         return False
+
+    def __gera_usuario(self):
+        return self.__email.split('@')[0]
 
 
 p1 = Produto('Play4', 'Video Game', 2300)
@@ -110,4 +132,6 @@ if user.chaca_senha(senha):
 else:
     print('Acesso negado')
 
-print(f'Senha User Criptografada: {user._Usuario__senha}')
+print(f'Senha User Criptografada: {user._Usuario__senha}') #metodo errado de se acessar!!
+
+user3 = Usuario('Roberta', 'Maria', 'robertaMaria@.com', '5678')
