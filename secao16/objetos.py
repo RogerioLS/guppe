@@ -20,9 +20,9 @@ class Lampada:
 
     def ligar_desligar(self):
         if self.__ligada:
-            self.__ligada = False
+            self.__ligada = "DESLIGADO"
         else:
-            self.__ligada = True
+            self.__ligada = "LIGADA"
 
 
 class Cliente:
@@ -61,7 +61,8 @@ class Usuario:
 # Instâncias/Objetos
 lamp1 = Lampada('branca', 110, 60)
 lamp1.ligar_desligar()
-print(f'A lâmpada está ligada? {lamp1.checa_lampada()}')
+lamp1.ligar_desligar()
+print(f'A lâmpada está ligada?\n{lamp1.checa_lampada()}')
 
 cli = Cliente('Eliana', '123.456.789-99')
 cc = ContaCorrente(5000, 1000, cli)
