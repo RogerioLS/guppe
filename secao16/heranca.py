@@ -17,29 +17,51 @@ Funcionario
     - sobrenome;
     - cpf;
     - matricula;
+
+* Quando uma classe herda de outra classe ela herda TODOS os atributos e metodos da classe herdada
+* Quando uma classe herda de outra classe, a classe herdada é conhecida por:
+    [Pessoa]
+    - Super Classe:
+    - Classe Mãe;
+    - Classe Pai;
+    - Classe Base;
+    - Classe Genérica;
+* Quando uma classe herda de outra classe, ela é chamada:
+    [Cliente, Funcionario]
+    - Sub Classe;
+    - Classe Filha;
+    - Classe Específica;
 """
 
 
-class Cliente:
+class Pessoa:
 
-    def __init__(self, nome, sobrenome, cpf, renda):
+    def __init__(self, nome, sobrenome, cpf):
         self.__nome = nome
         self.__sobrenome = sobrenome
         self.__cpf = cpf
+
+    def nome_completo(self):
+        return f'{self.__nome} {self.__sobrenome}'
+
+
+class Cliente(Pessoa):
+    """Cliente herda de pessoa"""
+    def __init__(self, nome, sobrenome, cpf, renda):
+        # Não é comum passar o nome da classe como heranca
+        Pessoa.__init__(self, nome, sobrenome, cpf)
         self.__renda = renda
 
-    def nome_completo(self):
-        return f'{self.__nome} {self.__sobrenome}'
 
-
-class Funcionarios:
-
-    def __init__(self, nome, sobrenome, cpf, matricula):
-        self.__nome = nome
-        self.__sobrenome = sobrenome
-        self.__cpf = cpf
+class Funcionarios(Pessoa):
+    """Funcionario herda de pessoa"""
+    def __init__(self, nome, sbrenome, cpf, matricula):
+        # Forma comum
+        super().__init__(nome, sbrenome, cpf)
         self.__matricula = matricula
 
-    def nome_completo(self):
-        return f'{self.__nome} {self.__sobrenome}'
 
+cliente = Cliente('Rogerio', 'Lopes', '123.465.789.00', 5000)
+
+print(cliente.nome_completo())
+print(cliente.__dict__)
