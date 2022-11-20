@@ -31,6 +31,9 @@ Funcionario
     - Sub Classe;
     - Classe Filha;
     - Classe Específica;
+
+* Sobrescrita de método, ocorre quando reescrevemos/reimplementamos um método presente na super classe
+em classes filhas
 """
 
 
@@ -47,6 +50,7 @@ class Pessoa:
 
 class Cliente(Pessoa):
     """Cliente herda de pessoa"""
+
     def __init__(self, nome, sobrenome, cpf, renda):
         # Não é comum passar o nome da classe como heranca
         Pessoa.__init__(self, nome, sobrenome, cpf)
@@ -55,10 +59,16 @@ class Cliente(Pessoa):
 
 class Funcionarios(Pessoa):
     """Funcionario herda de pessoa"""
+
     def __init__(self, nome, sbrenome, cpf, matricula):
         # Forma comum
         super().__init__(nome, sbrenome, cpf)
         self.__matricula = matricula
+
+    def nome_completo(self):
+        print(super().nome_completo())
+        print(self.__Pessoa_cpf)
+        return f'Funcionario: {self.__matricula} Nome: {self.__Pessoa__nome}'
 
 
 cliente = Cliente('Rogerio', 'Lopes', '123.465.789.00', 5000)
