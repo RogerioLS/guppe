@@ -58,4 +58,4 @@ print(f'O {nome} tem {idade} anos')
 cast é a 'conversão' de um tipo de dado para outro.
 """
 
-print(f'O {nome} nasceu em {2019 - int(idade)}')
+print(f'O {nome} nasceu em {2022 - int(idade)}')
